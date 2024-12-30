@@ -1,0 +1,19 @@
+name: Hello-Git
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install python
+        run: sudo apt update && sudo apt install -y python3
+
+      - name: Copy Git repository
+        uses: actions/checkout@v2
+
+      - name: Run app
+        run: python3 hello.py
+
