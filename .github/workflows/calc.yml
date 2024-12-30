@@ -8,12 +8,13 @@ jobs:
   hello-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Install python
-        run: sudo apt update && sudo apt install -y python3
-
       - name: Copy Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      
+      - name: Install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 'pypy3.10'
 
-      - name: Run app
-        run: python3 hello.py
-
+      - name: Run test app
+        run: python3 test_math_operations.py
