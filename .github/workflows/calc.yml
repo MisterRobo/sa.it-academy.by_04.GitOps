@@ -1,4 +1,4 @@
-name: Hello-Git
+name: Calc
 on:
   push:
     branches:
